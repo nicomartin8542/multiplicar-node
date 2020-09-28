@@ -29,7 +29,7 @@ let crearArchivo = async(base, limite = 10) => {
     }
     //Creao archivo.
     fs.writeFile(dir, data.trim(), (err) => {
-        if (err) throw error;
+        if (err) throw err.message.red
     });
     let salida = `tabla-${base}.txt`.green;
     return `Archivo creado: ${salida}`;
